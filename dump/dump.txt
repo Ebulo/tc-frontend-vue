@@ -1,0 +1,5 @@
+http://65.1.32.212/media/subtitles/upload/subtitles.vtt
+
+http://65.1.32.212/media/subtitles/upload/subtitles_PZc8YEo.vtt
+
+:src="`${video.subtitle}`"
