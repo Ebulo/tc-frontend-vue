@@ -5,3 +5,6 @@ http://65.1.32.212/media/subtitles/upload/subtitles_PZc8YEo.vtt
 https://ec2-65-1-32-212.ap-south-1.compute.amazonaws.com/
 
 :src="`${video.subtitle}`"
+
+'https://ec2-65-1-32-212.ap-south-1.compute.amazonaws.com/media/subtitles/upload/' +
+                            video.subtitle_file.toString().split('/')[6]

@@ -173,7 +173,13 @@
                           class="align-center"
                           height="110"
                           :src="
-                            `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrrniMj6s0Dd3GFX916k8-eODWGk5Ytt_i4P7Jsf7t3xmCusg8P_iBPJ5fb1-I7ILJb9A&usqp=CAU`
+                            `${
+                              video.thumbnail
+                                ? video.thumbnail
+                                : (Math.random() * 100) % 2 == 0
+                                ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrrniMj6s0Dd3GFX916k8-eODWGk5Ytt_i4P7Jsf7t3xmCusg8P_iBPJ5fb1-I7ILJb9A&usqp=CAU'
+                                : 'https://cdn.dribbble.com/users/124059/screenshots/15231994/dribbble.png?resize=400x0'
+                            }`
                           "
                         >
                         </v-img>

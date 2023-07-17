@@ -8,7 +8,13 @@
     :to="`/watch/${video.id}`"
   >
     <v-img
-      :src="`https://getuikit.com/v2/docs/images/placeholder_600x400.svg`"
+      :src="
+        `${
+          video.thumbnail
+            ? video.thumbnail
+            : 'https://getuikit.com/v2/docs/images/placeholder_600x400.svg'
+        }`
+      "
     ></v-img>
     <v-row no-gutters>
       <v-col cols="2" v-if="card.type != 'noAvatar'">
@@ -21,14 +27,6 @@
                 `https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg`
               "
             ></v-img>
-            <!-- <v-img
-              v-if="channel.photoUrl !== 'no-photo.jpg'"
-              class="elevation-6"
-              :src="`${url}/uploads/avatars/${channel.photoUrl}`"
-            ></v-img> -->
-            <v-avatar color="red">
-              <span class="white--text headline "> {{ "name" }}</span>
-            </v-avatar>
           </v-list-item-avatar>
         </v-list-item>
       </v-col>
@@ -41,7 +39,7 @@
         </v-card-title>
 
         <v-card-subtitle class="pl-2 pb-0">
-          {{ "user " + video.user }}
+          {{ "user " + " " }}
         </v-card-subtitle>
         <v-card-subtitle class="pl-2 pt-0">
           {{ video.views }} views<v-icon>mdi-circle-small</v-icon

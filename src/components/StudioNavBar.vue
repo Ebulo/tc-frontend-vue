@@ -229,7 +229,7 @@ export default {
         pages: [
           { title: "Dashboard", link: "/studio", icon: "mdi-view-dashboard" },
           {
-            title: "Youtube",
+            title: "Streamer",
             link: "/",
             icon: "mdi-play-box-multiple",
           },
