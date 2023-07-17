@@ -3,7 +3,7 @@ module.exports = {
   devServer: {
     proxy: {
       "^/videos": {
-        target: "http://65.1.32.212/",
+        target: "https://ec2-65-1-32-212.ap-south-1.compute.amazonaws.com/",
         ws: true,
         changeOrigin: true,
       },

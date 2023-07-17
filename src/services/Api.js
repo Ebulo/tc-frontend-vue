@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default () => {
   const axiosInstance = axios.create({
-    baseURL: `http://65.1.32.212/`,
+    baseURL: `https://ec2-65-1-32-212.ap-south-1.compute.amazonaws.com/`,
   });
 
   // const token = localStorage.getItem("token");
