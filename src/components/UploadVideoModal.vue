@@ -9,9 +9,7 @@
       <div class="d-flex justify-space-between mb-5" id="modal-header">
         <v-card-title class="py-3">Upload Video</v-card-title>
         <div class="mt-3 mr-2">
-          <v-btn text>
-            Upload With Classic
-          </v-btn>
+          <v-btn text> Upload With Classic </v-btn>
           <v-btn icon text @click="closeModal">
             <v-icon>mdi-close</v-icon>
           </v-btn>
@@ -40,7 +38,7 @@
                     <v-btn
                       icon
                       class="grey lighten-2 mb-4"
-                      style="height: 104px;width: 104px;"
+                      style="height: 104px; width: 104px"
                       @click="selectFile"
                       ><v-icon x-large class="grey--text text--darken-1"
                         >mdi-upload</v-icon
@@ -241,7 +239,7 @@ import VideoService from "@/services/VideoService";
 export default {
   name: "UploadModal",
   props: ["openDialog"],
-  data: function() {
+  data: function () {
     return {
       // dialog: this.openDialog ? this.openDialog : false,
       valid: false,
@@ -312,15 +310,20 @@ export default {
 
       this.uploading = true;
       const fd = new FormData();
+      console.log("video", this.selectedFile, this.selectedFile.name, fd);
+      fd.append("video", this.selectedFile, this.selectedFile.name);
       fd.append(
         "thumbnail",
         this.formData.thumbnail,
         this.formData.thumbnail.name
       );
-      console.log("video", this.selectedFile, this.selectedFile.name, fd);
-      fd.append("video", this.selectedFile, this.selectedFile.name);
 
-      fd.set("user", this.formData.user);
+      fd.set(
+        "user",
+        "https://ec2-65-1-32-212.ap-south-1.compute.amazonaws.com/users/" +
+          this.formData.user +
+          "/"
+      );
       fd.set("title", this.formData.title);
       fd.set("description", this.formData.description);
       fd.set("subtitle", this.formData.subtitle);
